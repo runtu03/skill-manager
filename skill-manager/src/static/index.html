@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>skill 管理器</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Codex 本地 skill 管理器</p>
+          <h1>skill 管理器</h1>
+          <p class="hero-copy">实时查看已安装 skill、变更记录，以及每个 skill 的简介与来源。</p>
+        </div>
+        <div class="hero-stats" id="summary"></div>
+      </header>
+
+      <main class="workspace">
+        <aside class="sidebar">
+          <div class="panel">
+            <h2>分组</h2>
+            <div id="group-list" class="group-list"></div>
+          </div>
+          <div class="panel">
+            <h2>最近活动</h2>
+            <div id="activity-list" class="activity-list"></div>
+          </div>
+        </aside>
+
+        <section class="content">
+          <div class="panel">
+            <div class="toolbar">
+              <input id="search-input" class="search" type="search" placeholder="搜索 skill 名称或简介">
+              <label class="toggle">
+                <input id="show-missing" type="checkbox">
+                <span>显示缺失 skill</span>
+              </label>
+            </div>
+            <div id="skill-list" class="skill-list"></div>
+          </div>
+        </section>
+
+        <aside class="detail">
+          <div class="panel">
+            <div id="detail-empty" class="detail-empty">选择左侧 skill 查看详情</div>
+            <div id="detail-view" class="detail-view hidden">
+              <div class="detail-header">
+                <div>
+                  <p id="detail-group" class="eyebrow"></p>
+                  <h2 id="detail-name"></h2>
+                </div>
+                <span id="detail-status" class="status-badge"></span>
+              </div>
+              <div class="meta-list">
+                <div><strong>路径</strong><span id="detail-path"></span></div>
+                <div><strong>首次发现</strong><span id="detail-first-seen"></span></div>
+                <div><strong>最近扫描</strong><span id="detail-last-seen"></span></div>
+                <div><strong>最近变更</strong><span id="detail-last-changed"></span></div>
+              </div>
+
+              <section class="description-block">
+                <h3>自动简介</h3>
+                <p id="detail-auto-description" class="description-text"></p>
+              </section>
+
+              <section class="description-block">
+                <h3>手动覆盖简介</h3>
+                <textarea id="override-input" rows="6" placeholder="输入你自己的 skill 使用说明"></textarea>
+                <div class="detail-actions">
+                  <button id="save-override" class="primary-button" type="button">保存说明</button>
+                  <button id="clear-override" class="secondary-button" type="button">清空覆盖</button>
+                </div>
+                <p id="save-message" class="save-message"></p>
+              </section>
+
+              <section class="description-block">
+                <h3>桌面设置</h3>
+                <div class="desktop-settings-card">
+                  <p class="desktop-settings-copy">管理 skill manager 的本地行为设置，改动会立即生效。</p>
+                  <label class="toggle-row" for="launch-at-startup">
+                    <span>开机自启动</span>
+                    <input id="launch-at-startup" type="checkbox">
+                  </label>
+                  <label class="toggle-row" for="minimize-to-tray">
+                    <span>关闭窗口时最小化到托盘</span>
+                    <input id="minimize-to-tray" type="checkbox">
+                  </label>
+                  <p id="desktop-settings-status" class="muted">桌面版启动后可直接保存这些设置。</p>
+                  <p id="desktop-data-path" class="muted">本地数据位置：data/desktop-settings.json</p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
