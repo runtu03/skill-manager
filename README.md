@@ -1,13 +1,13 @@
-#技能管理器
+# skill 管理器
 
-`技能管理器`是一个本地 Codex 技能管理工具，用来查看当前安装的技能、中文简介、来源路径和变更记录。它支持网页模式，也提供 Windows 桌面版安装包。
+`skill 管理器` 是一个本地 Codex skill 管理工具，用来查看当前安装的 skill、中文简介、来源路径和变更记录。它支持网页模式，也提供 Windows 桌面版安装包。
 
 ## 功能
 
--自动扫描用户、系统和插件来源的Codex技能。
--记录后续新增、删除、修改的技能。
--为每个技能提供中文简介，支持手动编辑覆盖。
--实时监听技能文件变化并刷新列表。
+- 自动扫描用户、系统和插件来源的 Codex skill。
+- 记录后续新增、删除、修改的 skill。
+- 为每个 skill 提供中文简介，支持手动编辑覆盖。
+- 实时监听 skill 文件变化并刷新列表。
 - 桌面版支持独立窗口、托盘菜单、关闭隐藏到后台、开机自启动开关。
 
 ## 下载安装
@@ -26,7 +26,7 @@ skill 管理器_0.1.0_x64-setup.exe
 
 ```powershell
 npm install
-npm 启动
+npm start
 ```
 
 默认访问地址：
@@ -57,8 +57,8 @@ http://127.0.0.1:3211
 
 - Node.js
 - Rust 工具链
--Visual Studio 构建工具，包含 MSVC 和 Windows SDK
--Microsoft Edge WebView2 运行时
+- Visual Studio Build Tools，包含 MSVC 和 Windows SDK
+- Microsoft Edge WebView2 Runtime
 
 构建命令：
 
@@ -86,3 +86,4 @@ desktop/src-tauri/target/release/bundle/nsis/
 ```powershell
 node --test tests/*.test.js
 ```
+
